@@ -4,7 +4,7 @@ import { useRouter } from 'vue-router';
 import {
   QHeader, QToolbar, QLayout, QPage, QPageContainer,
   QSpace, QBtn, QBtnDropdown, QAvatar, QSeparator,
-  QCheckbox, QLinearProgress
+  QCheckbox, QLinearProgress, QDrawer, QList, QItem, QItemSection, QItemLabel
 } from 'quasar';
 
 const router = useRouter();
@@ -13,6 +13,7 @@ const router = useRouter();
 const accountDropdown = ref(false);
 const logoutAll = ref(false);
 const storageUsage = ref(0.05);
+const leftDrawerOpen = ref(false); // Controle da sidebar
 
 const handleLogout = () => {
   console.log('Logout realizado');
@@ -22,51 +23,68 @@ const handleLogout = () => {
 
 <template>
   <q-layout>
+    <!-- Sidebar -->
+    <q-drawer v-model="leftDrawerOpen" side="left" bordered :width="280" class="bg-dark text-white">
+      <q-list padding>
+        <q-item class="q-mb-md">
+          <q-item-section>
+            <q-item-label class="text-h5 text-weight-bold">NoLife Studies</q-item-label>
+          </q-item-section>
+        </q-item>
+
+        <!-- Itens do Menu -->
+        <q-item clickable v-ripple @click="router.push('/')">
+          <q-item-section avatar>
+            <q-icon name="home" color="white" />
+          </q-item-section>
+          <q-item-section>
+            <q-item-label>Dashboard</q-item-label>
+          </q-item-section>
+        </q-item>
+
+        <q-item clickable v-ripple @click="router.push('/escola')">
+          <q-item-section avatar>
+            <q-icon name="event" color="white" />
+          </q-item-section>
+          <q-item-section>
+            <q-item-label>Eventos</q-item-label>
+          </q-item-section>
+        </q-item>
+
+        <q-item clickable v-ripple @click="router.push('/user')">
+          <q-item-section avatar>
+            <q-icon name="person" color="white" />
+          </q-item-section>
+          <q-item-section>
+            <q-item-label>User</q-item-label>
+          </q-item-section>
+        </q-item>
+
+        <q-item clickable v-ripple @click="router.push('/user')">
+          <q-item-section avatar>
+            <q-icon name="logout" color="white" />
+          </q-item-section>
+          <q-item-section>
+            <q-item-label>Logout</q-item-label>
+          </q-item-section>
+        </q-item>
+        <!-- Adicione outros itens conforme necessário -->
+      </q-list>
+    </q-drawer>
+
     <q-header elevated style="background-color: #1C1C1C;" class="text-white shadow-2">
       <q-toolbar>
-        <q-btn flat dense icon="menu" class="q-mr-sm" aria-label="Menu" />
+        <!-- Botão para toggle da sidebar -->
+        <q-btn flat dense icon="menu" class="q-mr-sm" aria-label="Menu" @click="leftDrawerOpen = !leftDrawerOpen" />
 
+        <!-- Restante do header permanece igual -->
         <q-space />
 
         <q-toolbar-title class="text-weight-bold">
           NoLife Studies
         </q-toolbar-title>
-        <!-- Links de Navegação -->
-        <div class="gt-sm">
-          <q-btn flat label="Home" icon="home" @click="router.push('/')" class="q-mx-sm" />
-          <q-btn flat label="Pesquisa" icon="search" @click="router.push('/pesquisa')" class="q-mx-sm" />
-          <q-btn-dropdown v-model="accountDropdown" icon="manage_accounts" label="Conta" persistent class="q-ml-md">
-            <div class="column q-pa-md" style="min-width: 300px">
-              <div class="text-h8 q-mb-md" style="text-align: center; width: auto;">davidaguasoliveira@gmail.com</div>
-              <q-btn color="primary" label="Gerir Conta NoLife" outline dense v-close-popup @click="handleLogout" />
 
-              <div class="column q-gutter-y-sm" color="#1C1C1C">
-
-                <div class="column justify-between q-mt-md">
-                  <div class="row q-mt-md">
-                    <div class="text-caption q-mb-xs">
-                      Usou {{ (storageUsage * 100).toFixed(0)}}% de 15 GB
-                    </div>
-                    <q-linear-progress :value="storageUsage" color="#1C1C1C" class="q-mb-md" />
-                  </div>
-                  <q-btn flat dense label="Regras de Utilização" class="text-caption text-grey-7" />
-                  <q-btn flat dense label="Tutoriais" class="text-caption text-grey-7" />
-                </div>
-              </div>
-
-              <q-separator class="q-my-md"/>
-
-              <div class="row items-center justify-between">
-                <q-avatar size="40px">
-                  <img src="https://cdn.quasar.dev/img/boy-avatar.png">
-                </q-avatar>
-                <div>David Oliveira</div>
-
-                <q-btn color="1C1C1C" label="Logout" outline dense v-close-popup @click="handleLogout" />
-              </div>
-            </div>
-          </q-btn-dropdown>
-        </div>
+        <!-- ... restante do código do header ... -->
       </q-toolbar>
     </q-header>
 
@@ -79,8 +97,18 @@ const handleLogout = () => {
 </template>
 
 <style scoped>
-/* Estilos personalizados opcionais */
-.q-checkbox__label div {
-  line-height: 1.2;
+/* Estilos personalizados */
+.q-drawer {
+  background-color: #1C1C1C;
+  border-right: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.q-item:hover {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  border-radius: 8px;
+}
+
+.q-item__label {
+  color: white !important;
 }
 </style>
