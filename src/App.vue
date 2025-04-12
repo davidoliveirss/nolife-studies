@@ -22,7 +22,7 @@ const handleLogout = () => {
 
 <template>
   <q-layout>
-    <q-header elevated class="bg-primary text-white shadow-2">
+    <q-header elevated style="background-color: #1C1C1C;" class="text-white shadow-2">
       <q-toolbar>
         <q-btn flat dense icon="menu" class="q-mr-sm" aria-label="Menu" />
 
@@ -40,21 +40,21 @@ const handleLogout = () => {
               <div class="text-h8 q-mb-md" style="text-align: center; width: auto;">davidaguasoliveira@gmail.com</div>
               <q-btn color="primary" label="Gerir Conta NoLife" outline dense v-close-popup @click="handleLogout" />
 
-              <div class="column q-gutter-y-sm">
+              <div class="column q-gutter-y-sm" color="#1C1C1C">
 
                 <div class="column justify-between q-mt-md">
                   <div class="row q-mt-md">
                     <div class="text-caption q-mb-xs">
-                      Usou {{ (storageUsage * 100).toFixed(0) }}% de 15 GB
+                      Usou {{ (storageUsage * 100).toFixed(0)}}% de 15 GB
                     </div>
-                    <q-linear-progress :value="storageUsage" color="primary" class="q-mb-md" />
+                    <q-linear-progress :value="storageUsage" color="#1C1C1C" class="q-mb-md" />
                   </div>
                   <q-btn flat dense label="Regras de Utilização" class="text-caption text-grey-7" />
                   <q-btn flat dense label="Tutoriais" class="text-caption text-grey-7" />
                 </div>
               </div>
 
-              <q-separator class="q-my-md" />
+              <q-separator class="q-my-md"/>
 
               <div class="row items-center justify-between">
                 <q-avatar size="40px">
@@ -62,7 +62,7 @@ const handleLogout = () => {
                 </q-avatar>
                 <div>David Oliveira</div>
 
-                <q-btn color="primary" label="Logout" outline dense v-close-popup @click="handleLogout" />
+                <q-btn color="1C1C1C" label="Logout" outline dense v-close-popup @click="handleLogout" />
               </div>
             </div>
           </q-btn-dropdown>
