@@ -1,0 +1,115 @@
+<script setup lang="ts">
+import { ref } from 'vue';
+import { useMeta } from 'quasar';
+
+useMeta({ title: 'NoLife Studies' });
+
+const tab = ref('escola1');
+const escolas = ref([
+  {
+    name: 'escola1',
+    label: 'Fontes Pereira de Melo',
+    icon: 'school',
+    image: 'https://pactoparaoclima.portodigital.pt/wp-content/uploads/2023/02/AE-Fontes-Pereira-de-Melo-5.jpg'
+  },
+  {
+    name: 'escola2',
+    label: 'Maria Lamas',
+    icon: 'castle',
+    image: 'https://exemplo.com/imagem2.jpg'
+  },
+  // Adicione mais 6 escolas aqui...
+]);
+</script>
+
+<template>
+  <div class="q-pa-md">
+    <q-card class="my-card" flat bordered>
+      <q-card-section class="bg-grey-10 text-center">
+        <div class="text-h5 text-white">Sistema Escolar P2PR</div>
+        <div class="text-subtitle1 text-grey-4 q-mt-sm">Agenda Cultural e Eventos</div>
+      </q-card-section>
+
+      <!-- Navegação Estilo Dashboard -->
+      <q-scroll-area 
+        horizontal 
+        :visible="false" 
+        class="q-pa-sm bg-grey-2"
+        style="height: 150px"
+      >
+        <div class="row no-wrap q-gutter-md">
+          <q-card 
+            v-for="escola in escolas" 
+            :key="escola.name"
+            class="cursor-pointer escola-card"
+            :class="{ 'active-card': tab === escola.name }"
+            @click="tab = escola.name"
+            style="min-width: 200px"
+          >
+            <q-img :src="escola.image" style="height: 100px">
+              <div class="absolute-bottom text-subtitle2 text-center">
+                {{ escola.label }}
+              </div>
+            </q-img>
+          </q-card>
+        </div>
+      </q-scroll-area>
+
+      <!-- Conteúdo -->
+      <q-tab-panels v-model="tab" animated transition-prev="scale" transition-next="scale">
+        <q-tab-panel 
+          v-for="escola in escolas" 
+          :name="escola.name" 
+          :key="escola.name"
+          class="q-pa-none"
+        >
+          <div class="row q-col-gutter-md">
+            <div class="col-12 col-md-3">
+              <q-card class="full-height">
+                <q-card-section class="bg-primary text-white">
+                  <div class="text-h6">{{ escola.label }}</div>
+                  <q-icon :name="escola.icon" size="lg" class="q-mt-md"/>
+                </q-card-section>
+                
+                <q-card-section>
+                  <div class="text-caption text-grey-8">
+                    Informações detalhadas sobre a escola, calendário acadêmico e regulamentos internos.
+                  </div>
+                </q-card-section>
+              </q-card>
+            </div>
+
+            <div class="col-12 col-md-9">
+              <q-markup-table flat bordered class="shadow-1">
+                <thead class="bg-grey-10 text-white">
+                  <tr>
+                    <th class="text-left">Evento</th>
+                    <th class="text-right">Data</th>
+                    <th class="text-right">Responsável</th>
+                    <th class="text-right">Local</th>
+                    <th class="text-right">Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- Seus dados aqui -->
+                </tbody>
+              </q-markup-table>
+            </div>
+          </div>
+        </q-tab-panel>
+      </q-tab-panels>
+    </q-card>
+  </div>
+</template>
+
+<style lang="sass">
+.escola-card
+  transition: transform 0.3s, box-shadow 0.3s
+  &:hover
+    transform: translateY(-5px)
+    box-shadow: $shadow-5
+
+.active-card
+  border: 2px solid $primary
+  box-shadow: $shadow-3
+</style>

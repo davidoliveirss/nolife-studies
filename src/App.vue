@@ -23,7 +23,6 @@ const handleLogout = () => {
 
 <template>
   <q-layout>
-    <!-- Sidebar -->
     <q-drawer v-model="leftDrawerOpen" side="left" bordered :width="280" class="bg-dark text-white">
       <q-list padding>
         <q-item class="q-mb-md">
@@ -32,7 +31,7 @@ const handleLogout = () => {
           </q-item-section>
         </q-item>
 
-        <!-- Itens do Menu -->
+        <!-- items do Menu -->
         <q-item clickable v-ripple @click="router.push('/')">
           <q-item-section avatar>
             <q-icon name="home" color="white" />
@@ -42,21 +41,21 @@ const handleLogout = () => {
           </q-item-section>
         </q-item>
 
-        <q-item clickable v-ripple @click="router.push('/escola')">
+        <q-item clickable v-ripple @click="router.push('/resumos')">
           <q-item-section avatar>
-            <q-icon name="event" color="white" />
+            <q-icon name="school" color="white" />
           </q-item-section>
           <q-item-section>
-            <q-item-label>Eventos</q-item-label>
+            <q-item-label>Resumos</q-item-label>
           </q-item-section>
         </q-item>
 
-        <q-item clickable v-ripple @click="router.push('/user')">
+        <q-item clickable v-ripple @click="router.push('/resumos')">
           <q-item-section avatar>
-            <q-icon name="person" color="white" />
+            <q-icon name="manage_search" color="white" />
           </q-item-section>
           <q-item-section>
-            <q-item-label>User</q-item-label>
+            <q-item-label>Gerir resumos</q-item-label>
           </q-item-section>
         </q-item>
 
