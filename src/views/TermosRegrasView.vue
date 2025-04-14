@@ -46,24 +46,7 @@ const onReset = () => {
                 <div class="text-subtitle1 text-grey-4 q-mt-sm">Ano letivo 2024/25</div>
             </q-card-section>
             <div>
-                <q-form @submit="onSubmit" @reset="onReset" class="q-gutter-md q-px-md">
-                    <q-input filled v-model="avaliacao" color="grey-10" class="q-mt-xl" label="Avaliação *"
-                        hint="O que achas sobre a aplicação" lazy-rules
-                        :rules="[val => val && val.length > 0 || 'Tens que escrever algo']" />
-                    <q-input filled v-model="name" label="Melhorias" color="grey-10"
-                        hint="O que achas que podia ser melhorado" />
-
-                    <div class="q-pb-md q-pr-sm" style="text-align: right;">
-
-                        <q-btn label="Enviar" type="submit" color="grey-9 q-mr-sm">
-                            <q-tooltip>
-                                Esta alteração é defenitiva!
-                            </q-tooltip>
-                        </q-btn>
-                        <q-btn label="Redefinir" type="reset" color="white" flat class="text-grey-10" />
-
-                    </div>
-                </q-form>
+                dada
             </div>
         </q-card>
     </div>

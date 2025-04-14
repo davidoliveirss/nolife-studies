@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import { ref } from 'vue';
+import { useRouter } from 'vue-router';
 import Sidebar from '@/components/SideBar.vue'; // ajusta o caminho se necessário
 
+const router = useRouter();
 const leftDrawerOpen = ref(false);
 </script>
 
@@ -25,7 +27,8 @@ const leftDrawerOpen = ref(false);
         <q-space />
 
         <!-- Botão de notificações -->
-        <q-btn round icon="notifications" />
+        <q-btn round color="grey-10" icon="notifications" />
+        <q-btn round color="grey-10" class="q-ml-sm" icon="account_circle" @click="router.push('/conta')"/>
       </q-toolbar>
     </q-header>
 
