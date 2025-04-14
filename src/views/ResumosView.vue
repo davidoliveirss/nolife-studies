@@ -38,7 +38,7 @@ const disciplinas = ref([
       <!-- Navegação Estilo Dashboard -->
       <q-scroll-area horizontal :visible="true" class="q-pa-sm bg-grey-2" style="height: 150px">
         <div class="row no-wrap q-gutter-md">
-          <q-card v-for="disciplina in disciplinas" :key="disciplina.name" class="cursor-pointer disciplina-card"
+          <q-card v-for="disciplina in disciplinas" :key="disciplina.name" class="cursor-pointer disciplina-card q-mt-lg"
             :class="{ 'active-card': tab === disciplina.name }" @click="tab = disciplina.name" style="min-width: 200px">
             <q-img :src="disciplina.image" style="height: 100px">
               <div class="absolute-bottom text-subtitle2 text-center">
