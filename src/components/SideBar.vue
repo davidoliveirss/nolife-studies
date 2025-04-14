@@ -36,7 +36,7 @@ const router = useRouter();
 
       <q-item clickable v-ripple @click="router.push('/resumos')">
         <q-item-section avatar>
-          <q-icon name="manage_search" color="white" />
+          <q-icon name="dashboard" color="white" />
         </q-item-section>
         <q-item-section>
           <q-item-label>Gerir resumos</q-item-label>
