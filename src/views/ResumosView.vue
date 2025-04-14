@@ -2,13 +2,12 @@
 import { ref } from 'vue';
 import { useMeta } from 'quasar';
 
-useMeta({ title: 'NoLife Studies' });
-
 const tab = ref('disciplina1');
 const disciplinas = ref([
   {
     abreviatura: "TLP",
     name: 'disciplina1',
+    descricao: "Disciplina de programação, modulos 1,2,3,4 ",
     label: 'Programação',
     icon: 'terminal',
     image: 'https://pactoparaoclima.portodigital.pt/wp-content/uploads/2023/02/AE-Fontes-Pereira-de-Melo-5.jpg'
@@ -16,6 +15,7 @@ const disciplinas = ref([
   {
     abreviatura: "MAT",
     name: 'disciplina2',
+    descricao: "Disciplina de Matmatica B, modulos 6,7,8,9",
     label: 'Matmatica',
     icon: 'calculate',
     image: 'https://pactoparaoclima.portodigital.pt/wp-content/uploads/2023/02/AE-Fontes-Pereira-de-Melo-5.jpg'
@@ -25,17 +25,20 @@ const disciplinas = ref([
 </script>
 
 <template>
+
+  <title>NoLife Studies</title>
+
   <div class="q-pa-md">
     <q-card class="my-card" flat bordered>
       <q-card-section class="bg-grey-10 text-center">
-        <div class="text-h5 text-white">Sistema Escolar P2PR</div>
-        <div class="text-subtitle1 text-grey-4 q-mt-sm">Agenda Cultural e Eventos</div>
+        <div class="text-h5 text-white">Sistema resumos P2PR</div>
+        <div class="text-subtitle1 text-grey-4 q-mt-sm">Ano letivo 2024/25</div>
       </q-card-section>
 
       <!-- Navegação Estilo Dashboard -->
       <q-scroll-area horizontal :visible="true" class="q-pa-sm bg-grey-2" style="height: 150px">
         <div class="row no-wrap q-gutter-md">
-          <q-card v-for="disciplina in disciplinas" :key="disciplina.name" class="cursor-pointer escola-card"
+          <q-card v-for="disciplina in disciplinas" :key="disciplina.name" class="cursor-pointer disciplina-card"
             :class="{ 'active-card': tab === disciplina.name }" @click="tab = disciplina.name" style="min-width: 200px">
             <q-img :src="disciplina.image" style="height: 100px">
               <div class="absolute-bottom text-subtitle2 text-center">
@@ -59,7 +62,7 @@ const disciplinas = ref([
 
                 <q-card-section>
                   <div class="text-caption text-grey-8">
-                    Informações detalhadas sobre a escola, calendário acadêmico e regulamentos internos.
+                    {{ disciplina.descricao }}
                   </div>
                 </q-card-section>
               </q-card>
@@ -89,7 +92,7 @@ const disciplinas = ref([
 </template>
 
 <style lang="sass">
-.escola-card
+.disciplina-card
   transition: transform 0.3s, box-shadow 0.3s
   &:hover
     transform: translateY(-5px)

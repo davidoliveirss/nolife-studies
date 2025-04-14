@@ -59,6 +59,15 @@ const handleLogout = () => {
           </q-item-section>
         </q-item>
 
+        <q-item clickable v-ripple @click="router.push('/avaliar')">
+          <q-item-section avatar>
+            <q-icon name="rate_review" color="white" />
+          </q-item-section>
+          <q-item-section>
+            <q-item-label>Avaliar</q-item-label>
+          </q-item-section>
+        </q-item>
+
         <q-item clickable v-ripple @click="router.push('/user')">
           <q-item-section avatar>
             <q-icon name="logout" color="white" />
@@ -82,6 +91,11 @@ const handleLogout = () => {
         <q-toolbar-title class="text-weight-bold">
           NoLife Studies
         </q-toolbar-title>
+
+        <q-space />
+
+        <q-btn round icon="notifications">
+        </q-btn>
 
         <!-- ... restante do código do header ... -->
       </q-toolbar>
