@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import Sidebar from '@/components/Sidebar.vue'; // ajusta o caminho se necessário
+import Sidebar from '@/components/SideBar.vue'; // ajusta o caminho se necessário
 
 const leftDrawerOpen = ref(false);
 </script>

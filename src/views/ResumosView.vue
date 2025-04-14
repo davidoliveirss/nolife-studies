@@ -20,6 +20,14 @@ const disciplinas = ref([
     icon: 'calculate',
     image: 'https://pactoparaoclima.portodigital.pt/wp-content/uploads/2023/02/AE-Fontes-Pereira-de-Melo-5.jpg'
   },
+  {
+    abreviatura: "ASO",
+    name: 'disciplina3',
+    descricao: "Disciplina de arquitetura, modulos 12,2,34",
+    label: 'Arquitetura de sistemas operativos',
+    icon: 'dns',
+    image: 'https://pactoparaoclima.portodigital.pt/wp-content/uploads/2023/02/AE-Fontes-Pereira-de-Melo-5.jpg'
+  },
 
 ]);
 </script>
