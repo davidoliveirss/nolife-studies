@@ -46,8 +46,9 @@ const onReset = () => {
       </q-card-section>
       <div style="text-align: center;">
         <q-form @submit="onSubmit" @reset="onReset" class="q-gutter-md q-px-md">
-          <q-input filled v-model="avaliacao" color="grey-10" class="q-mt-xl" label="Avaliação *" hint="O que achas sobre a aplicação"
-            lazy-rules :rules="[val => val && val.length > 0 || 'Tens que escrever algo']" />
+          <q-input filled v-model="avaliacao" color="grey-10" class="q-mt-xl" label="Avaliação *"
+            hint="O que achas sobre a aplicação" lazy-rules
+            :rules="[val => val && val.length > 0 || 'Tens que escrever algo']" />
           <q-input filled v-model="name" label="Melhorias" color="grey-10" hint="O que achas que podia ser melhorado" />
 
           <div>
@@ -68,11 +69,20 @@ const onReset = () => {
           </div>
 
           <div>
-            <q-toggle v-model="accept" color="grey-9" class="q-mt-md" label="Eu li e aceito os termos de utilização" />
+            <q-toggle v-model="accept" color="grey-9" class="q-mt-md">
+              <template v-slot:default>
+                <span>
+                  Eu li e aceito os
+                  <router-link to="/termosregras" style="text-decoration: underline; color: #1C1C1C;" @click.stop>
+                    termos de utilização
+                  </router-link>
+                </span>
+              </template>
+            </q-toggle>
           </div>
 
           <div class="q-pb-md">
-            <q-btn label="Enviar" type="submit" color="grey-9 q-mr-md"/>
+            <q-btn label="Enviar" type="submit" color="grey-9 q-mr-md" />
             <q-btn label="Redefinir" type="reset" color="white" flat class="text-grey-10" />
           </div>
         </q-form>
