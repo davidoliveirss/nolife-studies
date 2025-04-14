@@ -5,7 +5,7 @@ import { useMeta } from 'quasar';
 
 const $q = useQuasar();
 
-const name = ref(null);
+const avaliacao = ref(null);
 const accept = ref(false);
 const ratingModel = ref(2); // Movido para cá e declarado corretamente
 
@@ -29,7 +29,7 @@ const onSubmit = () => {
 };
 
 const onReset = () => {
-  name.value = null;
+  avaliacao.value = null;
   age.value = null;
   accept.value = false;
 };
@@ -41,11 +41,12 @@ const onReset = () => {
 
   <div style="text-align: center;">
     <q-form @submit="onSubmit" @reset="onReset" class="q-gutter-md">
-      <q-input filled v-model="name" label="Avaliação *" hint="O que achas sobre a aplicação" lazy-rules
+      <q-input filled v-model="avaliacao" color="grey-10" label="Avaliação *" hint="O que achas sobre a aplicação" lazy-rules
         :rules="[val => val && val.length > 0 || 'Tens que escrever algo']" />
+      <q-input filled v-model="name" label="Melhorias" color="grey-10" hint="O que achas que podia ser melhorado"/>
 
       <div class="">
-        <q-rating v-model="ratingModel" size="2em" :max="4" color="grey-9">
+        <q-rating v-model="ratingModel" size="2em" :max="4" color="grey-10">
           <template v-slot:tip-1>
             <q-tooltip>Terrivel</q-tooltip>
           </template>
@@ -62,12 +63,12 @@ const onReset = () => {
       </div>
 
       <div>
-        <q-toggle v-model="accept" label="Eu li e aceito os termos de utilização" />
+        <q-toggle v-model="accept" color="grey-9" class="q-mt-md" label="Eu li e aceito os termos de utilização" />
       </div>
 
       <div>
-        <q-btn label="Enviar" type="submit"  color="grey-9 q-mr-md"/>
-        <q-btn label="Redefinir" type="reset" color="white" flat class="text-grey-10"/>
+        <q-btn label="Enviar" type="submit" color="grey-9 q-mr-md" />
+        <q-btn label="Redefinir" type="reset" color="white" flat class="text-grey-10" />
       </div>
     </q-form>
   </div>

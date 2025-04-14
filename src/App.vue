@@ -85,14 +85,13 @@ const handleLogout = () => {
         <!-- Botão para toggle da sidebar -->
         <q-btn flat dense icon="menu" class="q-mr-sm" aria-label="Menu" @click="leftDrawerOpen = !leftDrawerOpen" />
 
-        <!-- Restante do header permanece igual -->
-        <q-space />
+        <q-space/>
 
-        <q-toolbar-title class="text-weight-bold">
+        <q-toolbar-title class="text-weight-bold" style="text-align: center;">
           NoLife Studies
         </q-toolbar-title>
 
-        <q-space />
+        <q-space/>
 
         <q-btn round icon="notifications">
         </q-btn>
