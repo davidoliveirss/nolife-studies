@@ -3,7 +3,9 @@ import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 import Sidebar from '@/components/SideBar.vue';
 import NotificationCenter from '@/components/NotificationCenter.vue';
+import packageJson from '../package.json';
 
+const APP_VERSION = packageJson.version;
 
 const router = useRouter();
 const leftDrawerOpen = ref(false);
@@ -24,7 +26,7 @@ const leftDrawerOpen = ref(false);
 
         <q-toolbar-title class="text-weight-bold q-ml-xl q-pl-xl" style="text-align: center;">
           NoLife Studies
-          <q-badge outline align="top" color="white" label="v1.0.0" />
+          <q-badge outline align="top" color="white" :label="'v'+ APP_VERSION"/>
         </q-toolbar-title>
 
         <q-space />
