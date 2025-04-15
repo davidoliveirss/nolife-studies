@@ -82,8 +82,16 @@ const onReset = () => {
           </div>
 
           <div class="q-pb-md">
-            <q-btn label="Enviar" type="submit" color="grey-9 q-mr-md" />
-            <q-btn label="Redefinir" type="reset" color="white" flat class="text-grey-10" />
+            <q-btn label="Redefinir" type="reset" color="white" flat class="text-grey-10 q-mr-md" />
+            <q-btn label="Enviar" type="submit" color="grey-9" :disable="!accept">
+              <q-tooltip v-if="!accept" anchor="center right" self="center left" transition-show="scale"
+                transition-hide="fade" class="bg-grey-9 text-body1">
+                <div class="row items-center no-wrap">
+                  <q-icon name="warning" class="q-mr-xs" />
+                  Por favor, aceite os termos e condições para continuar
+                </div>
+              </q-tooltip>
+            </q-btn>
           </div>
         </q-form>
       </div>

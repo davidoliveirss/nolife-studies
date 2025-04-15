@@ -42,8 +42,8 @@ const onReset = () => {
     <div class="q-pa-md">
         <q-card class="my-card" flat bordered>
             <q-card-section class="bg-grey-10 text-center">
-                <div class="text-h5 text-white">Sistema de avaliações</div>
-                <div class="text-subtitle1 text-grey-4 q-mt-sm">Ano letivo 2024/25</div>
+                <div class="text-h5 text-white">Gerir Conta</div>
+                <div class="text-subtitle1 text-grey-4 q-mt-sm">NoLife Studies</div>
             </q-card-section>
             <div>
                 <q-form @submit="onSubmit" @reset="onReset" class="q-gutter-md q-px-md">

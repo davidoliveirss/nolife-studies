@@ -20,13 +20,13 @@ const leftDrawerOpen = ref(false);
 
         <q-space />
 
-        <q-toolbar-title class="text-weight-bold" style="text-align: center;">
+        <q-toolbar-title class="text-weight-bold q-ml-xl" style="text-align: center;">
           NoLife Studies
+          <q-badge outline align="top" color="white" label="v1.0.0" />
         </q-toolbar-title>
 
         <q-space />
 
-        <!-- Botão de notificações -->
         <q-btn round color="grey-10" icon="notifications" />
         <q-btn round color="grey-10" class="q-ml-sm" icon="account_circle" @click="router.push('/conta')"/>
       </q-toolbar>
