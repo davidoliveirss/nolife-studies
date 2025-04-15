@@ -81,7 +81,7 @@ const onReset = () => {
 
                 <!-- Checkbox de aceitação -->
                 <div class="row justify-center q-mb-md">
-                    <q-checkbox v-model="accept" label="Li e concordo com os termos e condições acima"
+                    <q-checkbox v-model="accept" color="grey-9" label="Li e concordo com os termos e condições acima"
                         class="text-weight-medium" />
                 </div>
 
