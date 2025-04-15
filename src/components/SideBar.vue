@@ -25,6 +25,15 @@ const router = useRouter();
         </q-item-section>
       </q-item>
 
+      <q-item clickable v-ripple @click="router.push('/calendario')">
+        <q-item-section avatar>
+          <q-icon name="event" color="white" />
+        </q-item-section>
+        <q-item-section>
+          <q-item-label>Calendário</q-item-label>
+        </q-item-section>
+      </q-item>
+
       <q-item clickable v-ripple @click="router.push('/resumos')">
         <q-item-section avatar>
           <q-icon name="school" color="white" />
