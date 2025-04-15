@@ -20,7 +20,7 @@ const leftDrawerOpen = ref(false);
 
         <q-space />
 
-        <q-toolbar-title class="text-weight-bold q-ml-xl" style="text-align: center;">
+        <q-toolbar-title class="text-weight-bold q-ml-xl q-pl-xl" style="text-align: center;">
           NoLife Studies
           <q-badge outline align="top" color="white" label="v1.0.0" />
         </q-toolbar-title>

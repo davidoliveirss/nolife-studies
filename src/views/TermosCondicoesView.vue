@@ -34,6 +34,9 @@ const onReset = () => {
 </script>
 
 <template>
+
+    <title>NoLife Studies</title>
+
     <div class="q-pa-md">
         <q-card flat bordered class="q-mx-xl">
             <q-card-section class="bg-grey-10 text-center">
@@ -51,22 +54,20 @@ const onReset = () => {
                 <div class="terms-container q-pa-md q-mb-md">
                     <div class="text-body1">
                         <p class="text-weight-bold">1. Aceitação dos Termos</p>
-                        <p class="q-mb-md">Ao utilizar nosso sistema de avaliações, você concorda com estes termos e
+                        <p class="q-mb-md">Ao utilizar nosso sistema de resumos, você concorda com estes termos e
                             condições. Se não concordar, por favor, não utilize o sistema.</p>
 
                         <p class="text-weight-bold">2. Uso Adequado</p>
                         <p class="q-mb-md">Você concorda em usar este sistema apenas para fins educacionais e de
                             avaliação legítima. É proibido:</p>
                         <ul class="q-mb-md">
-                            <li>Manipular ou falsificar avaliações</li>
-                            <li>Usar linguagem ofensiva ou inadequada</li>
-                            <li>Tentar acessar dados de outros usuários</li>
-                            <li>Realizar qualquer atividade que comprometa a integridade do sistema</li>
+                            <li>blablabla</li>
+                            <li>blebleble</li>
                         </ul>
 
                         <p class="text-weight-bold">3. Privacidade e Dados</p>
                         <p class="q-mb-md">Respeitamos sua privacidade. Os dados coletados serão usados apenas para fins
-                            acadêmicos e de melhoria do sistema, em conformidade com a LGPD.</p>
+                            acadêmicos e de melhoria do sistema, em conformidade com a RGPD.</p>
 
                         <p class="text-weight-bold">4. Responsabilidades</p>
                         <p class="q-mb-md">A NoLife Studies não se responsabiliza por avaliações ou conteúdos gerados
