@@ -5,6 +5,9 @@ import { useMeta } from 'quasar';
 
 const $q = useQuasar();
 
+const nome = ref(null);
+const dataNascimento = ref(null);
+
 const avaliacao = ref(null);
 const accept = ref(false);
 const ratingModel = ref(2); // Movido para cá e declarado corretamente
@@ -49,7 +52,7 @@ const onReset = () => {
           <q-input filled v-model="avaliacao" color="grey-10" class="q-mt-xl" label="Avaliação *"
             hint="O que achas sobre a aplicação" lazy-rules
             :rules="[val => val && val.length > 0 || 'Tens que escrever algo']" />
-          <q-input filled v-model="name" label="Melhorias" color="grey-10" hint="O que achas que podia ser melhorado" />
+          <q-input filled v-model="nome" label="Melhorias" color="grey-10" hint="O que achas que podia ser melhorado" />
 
           <div>
             <q-rating v-model="ratingModel" size="2em" :max="4" color="grey-10">

@@ -10,8 +10,12 @@ const in2 = ref(null);
 const accept = ref(false);
 const ratingModel = ref(2); // Movido para cá e declarado corretamente
 
+const onSubmit = () => {
+    console.log("accept")
+};
+
 const onReset = () => {
-    accept.value = false;
+    console.log("reset")
 };
 </script>
 
