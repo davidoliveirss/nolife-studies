@@ -5,32 +5,12 @@ import { useMeta } from 'quasar';
 
 const $q = useQuasar();
 
-const avaliacao = ref(null);
+const in1 = ref(null);
+const in2 = ref(null);
 const accept = ref(false);
 const ratingModel = ref(2); // Movido para cá e declarado corretamente
 
-const onSubmit = () => {
-    if (accept.value !== true) {
-        $q.notify({
-            color: 'red-5',
-            textColor: 'white',
-            icon: 'warning',
-            message: 'You need to accept the license and terms first'
-        });
-    }
-    else {
-        $q.notify({
-            color: 'green-4',
-            textColor: 'white',
-            icon: 'cloud_done',
-            message: 'Submitted'
-        });
-    }
-};
-
 const onReset = () => {
-    avaliacao.value = null;
-    age.value = null;
     accept.value = false;
 };
 </script>
@@ -47,16 +27,17 @@ const onReset = () => {
             </q-card-section>
             <div>
                 <q-form @submit="onSubmit" @reset="onReset" class="q-gutter-md q-px-md">
-                    <q-input filled v-model="avaliacao" color="grey-10" class="q-mt-xl" label="Avaliação *"
+                    <q-input filled v-model="in1" color="grey-10" class="q-mt-xl" label="Avaliação *"
                         hint="O que achas sobre a aplicação" lazy-rules
                         :rules="[val => val && val.length > 0 || 'Tens que escrever algo']" />
-                    <q-input filled v-model="name" label="Melhorias" color="grey-10"
+                    <q-input filled v-model="in2" label="Melhorias" color="grey-10"
                         hint="O que achas que podia ser melhorado" />
 
                     <div class="q-pb-md q-pr-sm" style="text-align: right;">
 
                         <q-btn label="Enviar" type="submit" color="grey-9 q-mr-sm">
-                            <q-tooltip>
+                            <q-tooltip anchor="center right" self="center left" transition-show="scale"
+                            transition-hide="fade" class="bg-grey-9 text-body1">
                                 Esta alteração é defenitiva!
                             </q-tooltip>
                         </q-btn>

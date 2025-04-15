@@ -57,7 +57,7 @@ const router = createRouter({
       component: () => import('../views/AccountView.vue')
     },
     {
-      path: '/termoscondicoes',
+      path: '/termos-e-condicoes',
       name: 'termoseregras',
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route

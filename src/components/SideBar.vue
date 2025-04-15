@@ -52,14 +52,25 @@ const router = useRouter();
         </q-item-section>
       </q-item>
 
-      <q-item clickable v-ripple @click="router.push('/user')">
-        <q-item-section avatar>
-          <q-icon name="logout" color="white" />
-        </q-item-section>
-        <q-item-section>
-          <q-item-label>Logout</q-item-label>
-        </q-item-section>
-      </q-item>
+      <div class="fixed-bottom" style="margin-bottom: 0; padding-bottom: 0;">
+        <q-item clickable v-ripple @click="router.push('/termos-e-condicoes')" style="margin-bottom: 0;">
+          <q-item-section avatar>
+            <q-icon name="article" color="white" />
+          </q-item-section>
+          <q-item-section>
+            <q-item-label>Termos e condições</q-item-label>
+          </q-item-section>
+        </q-item>
+
+        <q-item clickable v-ripple @click="router.push('/conta')">
+          <q-item-section avatar>
+            <q-icon name="logout" color="white" />
+          </q-item-section>
+          <q-item-section>
+            <q-item-label>Logout</q-item-label>
+          </q-item-section>
+        </q-item>
+      </div>
     </q-list>
   </q-drawer>
 </template>

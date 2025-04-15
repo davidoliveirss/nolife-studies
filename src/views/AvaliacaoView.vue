@@ -73,7 +73,7 @@ const onReset = () => {
               <template v-slot:default>
                 <span>
                   Eu li e aceito os
-                  <router-link to="/termoscondicoes" style="text-decoration: underline; color: #1C1C1C;" @click.stop>
+                  <router-link to="/termos-e-condicoes" style="text-decoration: underline; color: #1C1C1C;" @click.stop>
                     termos de utilização
                   </router-link>
                 </span>
