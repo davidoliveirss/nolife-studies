@@ -87,16 +87,16 @@ const onReset = () => {
                 <!-- Botões de ação -->
                 <div class="row justify-center q-gutter-md">
                     <q-btn label="Recusar" color="negative" @click="onReset" icon="cancel" class="q-px-lg" />
-                    <q-btn label="Aceitar" color="positive" @click="onSubmit" icon="check" class="q-px-lg"
-                        :disable="!accept">
-                    <q-tooltip v-if="!accept" anchor="center right" self="center left" transition-show="scale"
-                        transition-hide="fade" class="bg-grey-9 text-body1">
-                        <div class="row items-center no-wrap">
-                            <q-icon name="warning" class="q-mr-xs" />
-                            Por favor, aceite os termos e condições para continuar
-                        </div>
-                    </q-tooltip>
-                </q-btn>
+                    <q-btn label="Aceitar" color="positive" @click="onSubmit" icon="check"
+                        class="q-px-lg disabled-tooltip" :disable="!accept">
+                        <q-tooltip v-if="!accept" anchor="center right" self="center left" transition-show="scale"
+                            transition-hide="fade" class="bg-grey-9 text-body1">
+                            <div class="row items-center no-wrap">
+                                <q-icon name="warning" class="q-mr-xs" />
+                                Por favor, aceite os termos e condições para continuar
+                            </div>
+                        </q-tooltip>
+                    </q-btn>
                 </div>
             </q-card-section>
         </q-card>
