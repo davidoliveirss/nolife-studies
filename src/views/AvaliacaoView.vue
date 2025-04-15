@@ -5,10 +5,8 @@ import { useMeta } from 'quasar';
 
 const $q = useQuasar();
 
-const nome = ref(null);
-const dataNascimento = ref(null);
-
 const avaliacao = ref(null);
+const melhorias = ref(null);
 const accept = ref(false);
 const ratingModel = ref(2); // Movido para cá e declarado corretamente
 
@@ -32,8 +30,8 @@ const onSubmit = () => {
 };
 
 const onReset = () => {
-  nome.value = null;
-  dataNascimento.value = null;
+  avaliacao.value = null;
+  melhorias.value = null;
 };
 </script>
 
@@ -52,7 +50,7 @@ const onReset = () => {
           <q-input filled v-model="avaliacao" color="grey-10" class="q-mt-xl" label="Avaliação *"
             hint="O que achas sobre a aplicação" lazy-rules
             :rules="[val => val && val.length > 0 || 'Tens que escrever algo']" />
-          <q-input filled v-model="nome" label="Melhorias" color="grey-10" hint="O que achas que podia ser melhorado" />
+          <q-input filled v-model="melhorias" label="Melhorias" color="grey-10" hint="O que achas que podia ser melhorado" />
 
           <div>
             <q-rating v-model="ratingModel" size="2em" :max="4" color="grey-10">
@@ -85,7 +83,7 @@ const onReset = () => {
           </div>
 
           <div class="q-pb-md">
-            <q-btn label="Redefinir" type="reset" color="white" flat class="text-grey-10 q-mr-md" />
+            <q-btn label="Redefinir" type="reset" color="white" flat class="text-grey-10 q-mr-md" @click="onReset" />
             <q-btn label="Enviar" type="submit" color="grey-9" :disable="!accept">
               <q-tooltip v-if="!accept" anchor="center right" self="center left" transition-show="scale"
                 transition-hide="fade" class="bg-grey-9 text-body1">

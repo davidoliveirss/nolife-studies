@@ -48,7 +48,7 @@ const router = useRouter();
           <q-icon name="rate_review" color="white" />
         </q-item-section>
         <q-item-section>
-          <q-item-label>Avaliar</q-item-label>
+          <q-item-label>Feedback</q-item-label>
         </q-item-section>
       </q-item>
 

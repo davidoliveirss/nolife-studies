@@ -19,6 +19,5 @@ app.use(Quasar, {
     Lang: 'pt',
     plugins: {}, // import Quasar plugins and add here
 })
-  
 
 app.mount('#app')
