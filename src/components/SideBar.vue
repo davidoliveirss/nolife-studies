@@ -2,12 +2,12 @@
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 
-const leftDrawerOpen = defineModel<boolean>('leftDrawerOpen'); // usa model para controlar estado do drawer
+const sideBar = defineModel<boolean>('sideBar'); // usa model para controlar estado do drawer
 const router = useRouter();
 </script>
 
 <template>
-  <q-drawer v-model="leftDrawerOpen" side="left" bordered :width="280" class="bg-dark text-white">
+  <q-drawer v-model="sideBar" side="left" bordered :width="280" class="bg-dark text-white">
     <q-list padding>
       <q-item class="q-mb-md">
         <q-item-section>

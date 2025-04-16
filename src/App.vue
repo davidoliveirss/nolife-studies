@@ -8,23 +8,23 @@ import packageJson from '../package.json';
 const APP_VERSION = packageJson.version;
 
 const router = useRouter();
-const leftDrawerOpen = ref(false);
+const sideBar = ref(false);
 </script>
 
 <template>
   <q-layout>
     <!-- Sidebar -->
-    <Sidebar v-model:leftDrawerOpen="leftDrawerOpen" />
+    <Sidebar v-model:sideBar="sideBar" />
 
     <!-- Header -->
     <q-header elevated style="background-color: #1C1C1C;" class="text-white shadow-2">
       <q-toolbar>
         <!-- Botão para abrir/fechar a sidebar -->
-        <q-btn flat dense icon="menu" class="q-mr-sm" aria-label="Menu" @click="leftDrawerOpen = !leftDrawerOpen" />
+        <q-btn flat dense icon="menu" class="q-mr-sm" aria-label="Menu" @click="sideBar = !sideBar" />
 
         <q-space />
 
-        <q-toolbar-title class="text-weight-bold q-ml-xl q-pl-xl" style="text-align: center;">
+        <q-toolbar-title class="text-weight-bold q-ml-xl q-pl-lg" style="text-align: center;">
           NoLife Studies
           <q-badge outline align="top" color="white" :label="'v'+ APP_VERSION"/>
         </q-toolbar-title>
