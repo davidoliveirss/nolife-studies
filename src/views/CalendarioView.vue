@@ -1,6 +1,9 @@
 <script setup lang="ts">
+
 import { ref } from "vue";
 import { useQuasar } from "quasar";
+import { useEventosStore } from '@/stores/eventos';
+import BarraPesquisas from '@/components/BarraPesquisas.vue';
 
 const $q = useQuasar();
 
@@ -20,6 +23,8 @@ const $q = useQuasar();
             <q-separator />
 
             <q-card-section>
+                
+                <BarraPesquisas />
 
                 <div class="terms-container q-pa-md q-mb-md">
                     <div class="q-pa-md">

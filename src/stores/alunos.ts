@@ -1,5 +1,5 @@
-import { ref, computed, reactive } from 'vue'
-import { defineStore } from 'pinia'
+import { ref, computed, reactive } from 'vue';
+import { defineStore } from 'pinia';
 import { Aluno } from '@/types/Aluno';
 
 export const useAlunosStore = defineStore('alunos', () => {
