@@ -41,7 +41,8 @@ const onReset = () => {
 
                         <q-btn label="Enviar" type="submit" color="grey-9 q-mr-sm">
                             <q-tooltip anchor="center right" self="center left" transition-show="scale"
-                            transition-hide="fade" class="bg-grey-9 text-body1">
+                                transition-hide="fade" class="bg-grey-9 text-body2">
+                                <q-icon name="warning" class="q-mr-xs" />
                                 Esta alteração é defenitiva!
                             </q-tooltip>
                         </q-btn>
