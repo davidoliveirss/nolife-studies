@@ -1,6 +1,6 @@
 {
   "name": "vue-nolife-studies",
-  "version": "0.0.0",
+  "version": ".alpha",
   "private": true,
   "type": "module",
   "scripts": {
