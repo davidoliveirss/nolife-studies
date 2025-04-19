@@ -6,6 +6,9 @@ const currentStatus = ref(true);
 </script>
 
 <template>
+
+    <title>NoLife Studies</title>
+
     <q-card class="q-mx-xl q-mt-xl" flat bordered>
         <q-card-section class="text-center">
             <div class="q-mb-xl text-grey-9">
