@@ -8,7 +8,7 @@ const pesquisa = ref(null);
 
 <template>
     <div class="q-px-lg text-h9">
-        <q-input v-model="pesquisa" color="grey-9" label="Disciplina" />
+        <q-input v-model="pesquisa" color="grey-9" label="Pesquisa" />
         <q-btn color="grey-9" @click="$emit('onsearch', pesquisa)">Pesquisar</q-btn>
     </div>
 </template>

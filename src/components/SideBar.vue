@@ -62,6 +62,14 @@ const router = useRouter();
       </q-item>
 
       <div class="fixed-bottom" style="margin-bottom: 0; padding-bottom: 0;">
+        <q-item clickable v-ripple @click="router.push('/status')" style="margin-bottom: 0;">
+          <q-item-section avatar>
+            <q-icon name="running_with_errors" color="white" />
+          </q-item-section>
+          <q-item-section>
+            <q-item-label>Status</q-item-label>
+          </q-item-section>
+        </q-item>
         <q-item clickable v-ripple @click="router.push('/termos-e-condicoes')" style="margin-bottom: 0;">
           <q-item-section avatar>
             <q-icon name="article" color="white" />

@@ -18,6 +18,8 @@ const currentStatus = ref(true);
                 <div class="text-grey-8">
                     <q-spinner-rings color="green" size="sm" />
                     Online
+                    <q-spinner-ios class="q-ml-md" color="blue" size="sm" />
+                    Updating
                     <q-spinner-gears class="q-ml-md" color="orange" size="sm" />
                     Manuntenção
                     <q-spinner-oval class="q-ml-md" color="red" size="sm" />
@@ -27,7 +29,7 @@ const currentStatus = ref(true);
             </div>
         </q-card-section>
         <q-card-section class="bg-grey-9">
-            <q-list class="bg-white">
+            <q-list class="bg-white q-pa-md q-rounded-md">
                 <q-item>
                     <q-item-label class="q-mt-md q-ml-xs">Status dos servicos</q-item-label>
                 </q-item>
@@ -36,7 +38,7 @@ const currentStatus = ref(true);
 
                 <q-item>
                     <q-item-section avatar>
-                        <q-spinner-gears color="orange" size="sm" />
+                        <q-spinner-gears class="q-ml-sm" color="orange" size="sm" />
                     </q-item-section>
                     <q-item-section>
                         <q-item-label class="q-mt-xs q-ml-xs">Admin</q-item-label>
@@ -48,7 +50,7 @@ const currentStatus = ref(true);
 
                 <q-item>
                     <q-item-section avatar>
-                        <q-spinner-rings color="green" size="sm" />
+                        <q-spinner-rings class="q-ml-sm" color="green" size="sm" />
                     </q-item-section>
                     <q-item-section>
                         <q-item-label class="q-mt-xs q-ml-xs">Calendário</q-item-label>
@@ -60,7 +62,7 @@ const currentStatus = ref(true);
 
                 <q-item>
                     <q-item-section avatar>
-                        <q-spinner-rings color="green" size="sm" />
+                        <q-spinner-rings class="q-ml-sm" color="green" size="sm" />
                     </q-item-section>
                     <q-item-section>
                         <q-item-label class="q-mt-xs q-ml-xs">Resumos</q-item-label>
@@ -72,7 +74,7 @@ const currentStatus = ref(true);
                 
                 <q-item>
                     <q-item-section avatar>
-                        <q-spinner-rings color="green" size="sm" />
+                        <q-spinner-rings class="q-ml-sm" color="green" size="sm" />
                     </q-item-section>
                     <q-item-section>
                         <q-item-label class="q-mt-xs q-ml-xs">Feedback</q-item-label>
