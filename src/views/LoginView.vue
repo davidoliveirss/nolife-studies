@@ -10,11 +10,11 @@ const surename = ref('');
 const checkbox = ref(false);
 
 function onRegister() {
-  $q.notify({
-    message: 'Registo efetuado com sucesso!',
-    color: 'green',
-    icon: 'check'
-  });
+    $q.notify({
+        message: 'Registo efetuado com sucesso!',
+        color: 'green',
+        icon: 'check'
+    });
 }
 </script>
 
@@ -37,7 +37,8 @@ function onRegister() {
 
             <q-tab-panels v-model="tab" animated>
                 <q-tab-panel name="login" style="color: #1C1C1C;">
-                    <q-input rounded outlined bg-color="grey-3" color="grey-10" v-model="name" label="Email" />
+                    <q-input rounded outlined bg-color="grey-3" color="grey-10" v-model="name"
+                        hint="Email escolar ou pessoal" label="Email" />
                     <div class="q-mt-md q-mr-md" style="text-align: right;">
                         <q-btn push color="grey-9" label="Login" />
                     </div>
@@ -46,9 +47,13 @@ function onRegister() {
                 <q-tab-panel name="register" animated>
                     <q-input rounded outlined bg-color="grey-3" color="grey-10" v-model="name" label="Nome" />
                     <q-input rounded outlined bg-color="grey-3" color="grey-10" class="q-mt-md" v-model="surename"
-                        label="Sobrenome"/>
+                        label="Sobrenome" />
+                    <q-input rounded outlined class="q-mt-md" bg-color="grey-3" color="grey-10" v-model="name"
+                        hint="Email escolar ou pessoal" label="Email" />
+                    <q-input rounded outlined bg-color="grey-3" color="grey-10" class="q-mt-md" v-model="surename"
+                        label="Data nascimento" />
                     <div class="q-mt-md q-mr-md" style="text-align: right;">
-                        <q-checkbox v-model="checkbox" color="white"
+                        <q-checkbox v-model="checkbox" color="grey-9"
                             label="Li e aceito os termos e regras de utilização" />
                         <q-btn push class="q-ml-md" color="grey-9" @click="onRegister" label="Register" />
                     </div>

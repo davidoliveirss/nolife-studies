@@ -24,15 +24,21 @@ const sideBar = ref(false);
 
         <q-space />
 
-        <q-toolbar-title class="text-weight-bold q-ml-xl q-pl-lg" style="text-align: center;">
+        <q-toolbar-title class="text-weight-bold q-ml-xl q-pl-xl" style="text-align: center;">
           NoLife Studies
-          <q-badge outline align="top" color="white" :label="'v'+ APP_VERSION"/>
+          <q-badge outline align="top" color="white" :label="'v' + APP_VERSION" />
         </q-toolbar-title>
 
         <q-space />
 
+        <q-badge color="green" rounded class="q-mr-sm" />
+        <div class="q-mr-md">
+          Status
+        </div>
+
+
         <notification-center />
-        <q-btn round color="grey-10" class="q-ml-sm" icon="account_circle" @click="router.push('/conta')"/>
+        <q-btn round color="grey-10" class="q-ml-sm" icon="account_circle" @click="router.push('/conta')" />
       </q-toolbar>
     </q-header>
 
