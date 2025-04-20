@@ -24,7 +24,7 @@ const sideBar = ref(false);
 
         <q-space />
 
-        <q-toolbar-title class="text-weight-bold q-ml-xl q-pl-xl" style="text-align: center;">
+        <q-toolbar-title class="text-weight-bold q-ml-xl q-pl-xl" style="text-align: center; margin-left: 150px;">
           NoLife Studies
           <q-badge outline align="top" color="white" :label="'v' + APP_VERSION" />
         </q-toolbar-title>
