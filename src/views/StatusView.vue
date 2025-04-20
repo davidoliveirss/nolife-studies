@@ -31,7 +31,10 @@ const currentStatus = ref(true);
 
             </div>
         </q-card-section>
-        <q-card-section class="bg-grey-9">
+
+        <q-separator spaced inset />
+
+        <q-card-section>
             <q-list class="bg-white q-pa-md q-rounded-md">
                 <q-item>
                     <q-item-label class="q-mt-md q-ml-xs">Status dos servicos</q-item-label>
