@@ -37,24 +37,38 @@ function onRegister() {
 
             <q-tab-panels v-model="tab" animated>
                 <q-tab-panel name="login" style="color: #1C1C1C;">
-                    <q-input rounded outlined bg-color="grey-3" color="grey-10" v-model="name"
-                        hint="Email escolar ou pessoal" label="Email" />
+                    <q-input rounded outlined bg-color="grey-3" color="grey-10" v-model="name" label="Email" />
                     <div class="q-mt-md q-mr-md" style="text-align: right;">
                         <q-btn push color="grey-9" label="Login" />
                     </div>
                 </q-tab-panel>
 
                 <q-tab-panel name="register" animated>
-                    <q-input rounded outlined bg-color="grey-3" color="grey-10" v-model="name" label="Nome" />
+                    <q-input rounded outlined bg-color="grey-3" color="grey-10" v-model="name" label="Nome" lazy-rules
+                        :rules="[val => val && val.length > 0 || 'Tens que escrever algo']" />
                     <q-input rounded outlined bg-color="grey-3" color="grey-10" class="q-mt-md" v-model="surename"
-                        label="Sobrenome" />
+                        label="Sobrenome" lazy-rules
+                        :rules="[val => val && val.length > 0 || 'Tens que escrever algo']" />
                     <q-input rounded outlined class="q-mt-md" bg-color="grey-3" color="grey-10" v-model="name"
-                        hint="Email escolar ou pessoal" label="Email" />
+                        hint="Email escolar ou pessoal" label="Email" lazy-rules
+                        :rules="[val => val && val.length > 0 || 'Tens que escrever algo']" />
                     <q-input rounded outlined bg-color="grey-3" color="grey-10" class="q-mt-md" v-model="surename"
                         label="Data nascimento" />
+                    <q-input rounded outlined bg-color="grey-3" color="grey-10" class="q-mt-lg" v-model="password"
+                        label="Password" />
+
                     <div class="q-mt-md q-mr-md" style="text-align: right;">
-                        <q-checkbox v-model="checkbox" color="grey-9"
-                            label="Li e aceito os termos e regras de utilização" />
+                        <q-checkbox v-model="checkbox" color="grey-9">
+                            <template v-slot:default>
+                                <span>
+                                    Eu li e aceito os
+                                    <router-link to="/termos-e-condicoes"
+                                        style="text-decoration: underline; color: #1C1C1C;" @click.stop>
+                                        termos de utilização
+                                    </router-link>
+                                </span>
+                            </template>
+                        </q-checkbox>
                         <q-btn push class="q-ml-md" color="grey-9" @click="onRegister" label="Register" />
                     </div>
                 </q-tab-panel>
