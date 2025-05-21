@@ -7,14 +7,12 @@ const $q = useQuasar(); // ACEDER AO CONTEXTO DO QUASAR
 const tab = ref('login'); // Controle das tabs
 const name = ref('');
 const surename = ref('');
+const password = ref('');
+const birth_date = ref('');
 const checkbox = ref(false);
 
 function onRegister() {
-    $q.notify({
-        message: 'Registo efetuado com sucesso!',
-        color: 'green',
-        icon: 'check'
-    });
+    console.log("Registo")
 }
 </script>
 
@@ -38,6 +36,7 @@ function onRegister() {
             <q-tab-panels v-model="tab" animated>
                 <q-tab-panel name="login" style="color: #1C1C1C;">
                     <q-input rounded outlined bg-color="grey-3" color="grey-10" v-model="name" label="Email" />
+                    <q-input rounded outlined bg-color="grey-3" color="grey-10" class="q-mt-md" v-model="name" label="Password" />
                     <div class="q-mt-md q-mr-md" style="text-align: right;">
                         <q-btn push color="grey-9" label="Login" />
                     </div>
@@ -46,13 +45,13 @@ function onRegister() {
                 <q-tab-panel name="register" animated>
                     <q-input rounded outlined bg-color="grey-3" color="grey-10" v-model="name" label="Nome" lazy-rules
                         :rules="[val => val && val.length > 0 || 'Tens que escrever algo']" />
-                    <q-input rounded outlined bg-color="grey-3" color="grey-10" class="q-mt-md" v-model="surename"
+                    <q-input rounded outlined bg-color="grey-3" color="grey-10" v-model="surename"
                         label="Sobrenome" lazy-rules
                         :rules="[val => val && val.length > 0 || 'Tens que escrever algo']" />
-                    <q-input rounded outlined class="q-mt-md" bg-color="grey-3" color="grey-10" v-model="name"
+                    <q-input rounded outlined  bg-color="grey-3" color="grey-10" v-model="name"
                         hint="Email escolar ou pessoal" label="Email" lazy-rules
                         :rules="[val => val && val.length > 0 || 'Tens que escrever algo']" />
-                    <q-input rounded outlined bg-color="grey-3" color="grey-10" class="q-mt-md" v-model="surename"
+                    <q-input rounded outlined bg-color="grey-3" color="grey-10" class="q-mt-md" v-model="birth_date"
                         label="Data nascimento" />
                     <q-input rounded outlined bg-color="grey-3" color="grey-10" class="q-mt-lg" v-model="password"
                         label="Password" />
