@@ -1,6 +1,16 @@
-# vue-escola
+# vue-nolife-studies-web
 
 This template should help get you started developing with Vue 3 in Vite.
+
+
+## Summary of the project
+
+Vue project of Nolife Studies, a website do upload summarys, and have a calender.
+
+
+## T-SQL
+
+The T-SQL to this project will be realease when the web app its 100% functional.
 
 ## Recommended IDE Setup
 
